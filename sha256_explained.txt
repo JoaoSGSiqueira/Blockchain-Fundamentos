@@ -1,0 +1,49 @@
+**1) SHA-256: CRYPTOGRAPHIC HASH FUNCTION**
+
+SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that takes an input, typically a sequence of bytes, and produces a fixed-size output, in this case, a 256-bit hash value.
+
+**2) MESSAGE PADDING: ENSURING REQUIREMENTS**
+
+Before the actual hashing process begins, the input message is padded to a specific length to ensure it meets the requirements of the SHA-256 algorithm. This padding includes the original message length and additional bits to fill the block.
+
+**3) PROCESSING IN BLOCKS: DIVISION INTO 512-BIT BLOCKS**
+
+The padded message is divided into blocks, each of 512 bits (64 bytes).
+
+**4) INITIALIZATION VECTORS (IVS) AND CONSTANTS: SECURITY DESIGN ELEMENTS**
+
+SHA-256 uses a set of constant values and initialization vectors in its algorithm. These values are predefined and are part of the security design.
+
+**5) PROCESSING EACH BLOCK: ROUNDS OF MATHEMATICAL OPERATIONS**
+
+The algorithm processes each block in a series of rounds, where mathematical operations (such as bitwise operations, logical functions, and modular arithmetic) are applied to the bits of the block.
+
+**6) COMPRESSION FUNCTION: CORE OF SHA-256**
+
+The core of the SHA-256 algorithm is its compression function. This function takes the current hash value and the input block, performs a series of operations, and produces a new hash value.
+
+**7) CHAINING BLOCKS: ENSURING INPUT CHANGES AFFECT THE FINAL HASH**
+
+The output hash from one block becomes the input to the next block in the chain. This "chaining" ensures that changes to the input at any point in the process affect the final hash.
+
+**8) FINAL HASH VALUE: 256-BIT REPRESENTATION**
+
+After processing all blocks, the final hash value is produced. This value is a fixed-size 256-bit representation of the original input.
+
+**9) SECURITY ASPECTS: KEY CRYPTOGRAPHIC PROPERTIES**
+
+   - **PRE-IMAGE RESISTANCE:**
+     It should be computationally infeasible to reverse the hash function and obtain the original input from the hash value.
+
+   - **COLLISION RESISTANCE:**
+     It should be unlikely for two different inputs to produce the same hash value. This property is crucial for the integrity of the hash as collisions could lead to security vulnerabilities.
+
+   - **AVALANCHE EFFECT:**
+     A small change in the input should result in a significantly different output. This property ensures that similar inputs don't produce similar hash values.
+
+   - **COMPUTATIONAL COMPLEXITY:**
+     The algorithm should be computationally expensive to break, even with the most powerful computing resources available.
+
+**10) SECURITY OF SHA-256: CRYPTOGRAPHIC STRENGTH**
+
+The security of SHA-256 relies on the difficulty of these cryptographic properties, making it suitable for various applications, including securing passwords, digital signatures, and, in the case of blockchains, ensuring the integrity of blocks in a decentralized and tamper-resistant manner.
